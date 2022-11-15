@@ -1,0 +1,37 @@
+<nav class="top-navbar">
+  <div class="container">
+     <div class="nav-flex">
+
+      <div class="logo">
+           <a href="#" title="APIMarket">
+                <span>APIMarket</span>
+           </a>
+      </div>
+
+      <div class="search">
+        <input type="text" placeholder="Search Product...">
+        <button title="Search"><fa-icon [icon]="faSearch"></fa-icon></button>
+      </div>
+
+      <div class="cart">
+        <!-- to Open Slide Cart -->
+       <a href="#" routerLink="cart" >
+        <span class="total">{{total | currency}}</span>
+        <span *ngIf="cartEmpty">{{cartEmpty}}</span>
+        <fa-icon [icon]="faShoppingCart"></fa-icon>
+       </a>
+      </div>
+
+     </div>
+  </div>
+  <!-- search bottom navbar -->
+  <div class="search-bottom-nav">
+    <div class="container">
+      <div class="search-area">
+        <input type="text" placeholder="Search Product...">
+        <button title="Search"><fa-icon [icon]="faSearch"></fa-icon></button>
+      </div>
+    </div>
+   </div>
+</nav>
+

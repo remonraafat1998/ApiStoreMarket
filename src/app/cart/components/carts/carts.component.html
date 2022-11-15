@@ -1,0 +1,51 @@
+<section class="cart">
+  <div class="container">
+   <div class="title text-center">Shoping Cart</div>
+         <div class="cart-content">
+           <table class=" table">
+             <thead>
+               <tr>
+               <th>Num</th>
+               <th>image</th>
+               <th>title</th>
+               <th class="text-center">quantity</th>
+               <th>unit price</th>
+               <th>total price</th>
+               <th>delete</th>
+               </tr>
+             </thead>
+             <tbody>
+               <tr *ngFor="let product of cartProducts;let index = index">
+                 <th class="text-center">{{index + 1}}</th>
+                 <td>
+                   <div class="img-product">
+                     <img src="{{product.item.image}}" alt="">
+                   </div>
+                 </td>
+                 <td class="text-left title-prod">{{product.item.title}}</td>
+                 <td class="quantity">
+                   <span class="minus-q" (click)="minus(index)"><fa-icon [icon]="faMinus"></fa-icon></span>
+                   <input type="number" minlength="1" maxlength="2"  [(ngModel)]="product.quantity"/>
+                   <span class="plus-q" (click)="plus(index)"><fa-icon [icon]="faPlus"></fa-icon></span>
+                 </td>
+                 <td>{{product.item.price | currency}}</td>
+                 <td>{{product.item.price * product.quantity | currency}}</td>
+                 <td><button class="btn btn-danger" (click)="deleteSingleCart(index)">Delete</button></td>
+               </tr>
+               <tr>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td></td>
+                 <td>Total:{{total | currency}}</td>
+                 <td><button class="btn btn-success" (click)="  OrderNow()">
+                  <app-sec-loading *ngIf="LoadingSec"></app-sec-loading>
+                   <span *ngIf="!LoadingSec">Order Now</span></button></td>
+               </tr>
+             </tbody>
+             <div class="alert alert-success" *ngIf="successSendCart">{{successSendCart}}</div>
+           </table>
+         </div>
+  </div>
+ </section>

@@ -1,0 +1,27 @@
+<div class="card-product">
+  <!-- top box -->
+
+  <div class="img-area">
+    <div class="filter-black"></div>
+    <div class="add-cart">
+         <button  class="text-center" (click)="add()"><fa-icon [icon]="faCartShopping"></fa-icon></button>
+    </div>
+    <img src="{{data.image}}" alt="">
+   </div>
+
+ <!-- foot -->
+ <div class="foot-box text-center">
+  <div class="title"><a href="#"  routerLink="/product/{{data.id}}">{{data.title}}</a></div>
+  <div class="rate-shape">
+    <input type="radio" name="rate1">
+    <input type="radio" name="rate2">
+    <input type="radio" name="rate3">
+    <input type="radio" name="rate4">
+    <input type="radio" name="rate5">
+  </div>
+  <div class="price">
+    <span>{{data.price | currency}}</span>
+    <del>{{(data.price) - random | currency}}</del>
+  </div>
+ </div>
+</div>

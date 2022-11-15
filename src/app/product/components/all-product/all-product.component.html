@@ -1,0 +1,25 @@
+<section class="products">
+  <div class="container">
+   <!-- Filter Category -->
+   <div class="filter-cartg">
+    <select class="form-select" (change)="changeFilter($event)">
+      <option value="all" selected>All Product</option>
+      <option *ngFor="let singleCateg of AllCategories" [value]="singleCateg">{{singleCateg}}</option>
+    </select>
+   </div>
+
+    <div class="row">
+      <div class="col-lg-3 col-md-6" *ngFor="let product of AllProducts" >
+       <div class="product-field" *ngIf="!Loading">
+          <app-single-product [data]="product" (item)="addInfCart($event)" ></app-single-product>
+        </div>
+       </div>
+    </div>
+    <div class="loading" *ngIf="Loading">
+      <app-main-loading ></app-main-loading>
+    </div>
+
+    <!-- app-custum-pop-up -->
+    <app-custum-pop-up *ngIf="popUp"></app-custum-pop-up>
+  </div>
+</section>

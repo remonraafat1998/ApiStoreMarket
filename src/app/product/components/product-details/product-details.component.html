@@ -1,0 +1,42 @@
+<section class="details">
+  <div class="container">
+   <div class="row" *ngIf="!loading">
+    <!-- img Box -->
+    <div class="col-lg-6">
+       <div class="img-product">
+        <img src="{{data.item.image}}" alt="{{data.item.title}}">
+       </div>
+    </div>
+
+    <!-- Product Details -->
+    <div class="col-lg-6">
+      <div class="content">
+      <div class="title">{{data.item.title}}</div>
+      <div class="rate">Rate: <span>{{data.item.rating.rate}}</span></div>
+      <div class="price">{{data.item.price | currency:"EGP":"symbol"}}</div>
+      <div class="quantity">
+          <span class="minus-q" (click)="minus()"><fa-icon [icon]="faMinus"></fa-icon></span>
+          <input type="number" minlength="1" maxlength="2"  [(ngModel)]="data.quantity">
+          <span class="plus-q" (click)="plus()"><fa-icon [icon]="faPlus"></fa-icon></span>
+  </div>
+  <div class="add-to-cart"><button (click)="addToCart()">Add To Cart</button></div>
+
+      </div>
+    </div>
+   </div>
+
+   <div class="loading" *ngIf="loading">
+    <app-main-loading></app-main-loading>
+   </div>
+    </div>
+
+     <!-- description -->
+     <div class="description text-center">
+      <div class="title text-center"><h4>description</h4></div>
+       <div class="container">
+        <p class="des-content">{{data.item.description}}</p>
+       </div>
+    </div>
+
+    <app-custum-pop-up *ngIf="popUp"></app-custum-pop-up>
+  </section>

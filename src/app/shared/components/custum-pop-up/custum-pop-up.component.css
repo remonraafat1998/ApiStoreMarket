@@ -1,0 +1,33 @@
+.cust-Pop-Up
+{
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  top: 0;
+  z-index: 9999;
+}
+.cust-Pop-Up .pop-box
+{
+ position: relative;
+ top: 0;
+ width: 380px;
+ height: 180px;
+ background-color: #fff;
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+ padding: 20px;
+ border-radius: 0 0 6px 6px ;
+}
+.cust-Pop-Up .pop-box .title
+{
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--mainColor1);
+}
+.cust-Pop-Up .pop-box .icon-check fa-icon
+{
+  color: var(--mainColor1);
+  font-size: 64px;
+}

@@ -1,0 +1,17 @@
+.filter-cartg
+{
+  margin: 20px 0;
+}
+.product-field
+{
+  position: relative;
+  min-height: 400px;
+  overflow: hidden;
+}
+.loading
+{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

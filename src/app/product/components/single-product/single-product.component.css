@@ -1,0 +1,101 @@
+.card-product .img-area
+{
+  position: relative;
+  width: 100%;
+  min-height: 300px;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: all ease-in-out 1s;
+  cursor: pointer;
+}
+.card-product .img-area .filter-black
+{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 666;
+  background: rgba(0, 0, 0, 0.1);
+  transition: all ease-in-out 1s;
+}
+.card-product .img-area .add-cart
+{
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  z-index: 777;
+  top: 50%;
+  left: 40%;
+  display: none;
+}
+.card-product .img-area .add-cart button
+{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  background-color: #eee;
+}
+.card-product .img-area .add-cart fa-icon
+{
+  color: var(--mainColor);
+  transition: 0.5s;
+}
+.card-product .img-area .add-cart:hover fa-icon
+{
+  color: red;
+}
+.card-product .img-area img
+{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: all ease-in-out 1s;
+}
+
+.card-product .img-area:hover .filter-black
+{
+  background: rgba(0, 0, 0, 0.5);
+}
+.card-product .img-area:hover .add-cart
+{
+  display: block;
+}
+ .card-product .img-area:hover img
+{
+  transform: scale(1.1);
+}
+/* foot */
+ .foot-box
+{
+  padding: 10px 0;
+}
+.card-product .foot-box .title a
+{
+   color: #000;
+   font-size: 18px;
+   font-weight: 500;
+   transition: 0.5s;
+}
+.card-product .foot-box .title a:hover
+{
+  color: red;
+}
+.card-product .foot-box .rate-shape input
+{
+  margin: 0 2px;
+  cursor: pointer;
+}
+.card-product .foot-box .price  span
+{
+  color: red;
+}
+.card-product .foot-box .price del
+{
+  margin: 0 12px ;
+}
